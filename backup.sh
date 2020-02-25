@@ -1,3 +1,4 @@
+#!/bin/bash
 # 当前文件所在目录
 basepath=$(cd `dirname $0`; pwd)
 echo "当前 shell 文件目录: $basepath"

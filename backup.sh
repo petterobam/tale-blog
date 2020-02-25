@@ -9,6 +9,6 @@ git pull origin master
 echo "git add ."
 git add . 
 echo "git commit -a -m 'git auto backup at $datetime'"
-git commit -a -m 'git auto backup at $datetime'
+git commit -m 'git auto backup at $datetime'
 echo "git push origin master"
 git push origin master

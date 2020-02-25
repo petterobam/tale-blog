@@ -1,0 +1,488 @@
+[tale] 2018-03-08 00:05:30,761 INFO  [blade-pool-13] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/4	HTTP/1.1
+[tale] 2018-03-08 00:05:30,763 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 00:05:30,763 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/4, 来路地址: 66.249.79.66
+[tale] 2018-03-08 00:05:30,764 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
+[tale] 2018-03-08 00:05:30,765 DEBUG [blade-pool-13] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,765 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 00:05:30,767 DEBUG [blade-pool-13] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,767 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 00:05:30,768 DEBUG [blade-pool-13] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,782 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
+[tale] 2018-03-08 00:05:30,782 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,783 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
+[tale] 2018-03-08 00:05:30,783 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,784 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 00:05:30,784 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 00:05:30,784 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 00:05:30,784 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 00:05:30,784 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,785 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 00:05:30,785 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,790 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 00:05:30,790 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 00:05:30,790 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 00:05:30,790 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 00:05:30,790 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:05:30,791 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 00:05:30,791 DEBUG [blade-pool-13] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:31:01,140 INFO  [blade-pool-11] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/CentOs	HTTP/1.1
+[tale] 2018-03-08 00:31:01,143 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 00:31:01,143 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/CentOs, 来路地址: 66.249.79.95
+[tale] 2018-03-08 00:31:01,148 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
+[tale] 2018-03-08 00:31:01,150 DEBUG [blade-pool-11] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:31:01,151 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
+[tale] 2018-03-08 00:31:01,151 DEBUG [blade-pool-11] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:31:01,151 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
+[tale] 2018-03-08 00:31:01,153 DEBUG [blade-pool-11] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 00:31:01,155 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 00:31:01,155 DEBUG [blade-pool-11] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 00:31:01,155 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 00:31:01,156 DEBUG [blade-pool-11] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,105 INFO  [blade-pool-13] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2018-03-08 01:26:49,106 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 01:26:49,106 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.79.95
+[tale] 2018-03-08 01:26:49,107 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 01:26:49,108 DEBUG [blade-pool-13] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,137 INFO  [blade-pool-9] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/6	HTTP/1.1
+[tale] 2018-03-08 01:26:49,137 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 01:26:49,137 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/6, 来路地址: 66.249.79.95
+[tale] 2018-03-08 01:26:49,138 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
+[tale] 2018-03-08 01:26:49,139 DEBUG [blade-pool-9] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,140 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 01:26:49,142 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,142 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 01:26:49,142 DEBUG [blade-pool-9] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,155 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
+[tale] 2018-03-08 01:26:49,155 DEBUG [blade-pool-9] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,155 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
+[tale] 2018-03-08 01:26:49,156 DEBUG [blade-pool-9] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 01:26:49,156 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 01:26:49,156 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 01:26:49,157 DEBUG [blade-pool-9] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2018-03-08 01:26:49,157 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 01:26:49,157 DEBUG [blade-pool-9] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,247 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/5	HTTP/1.1
+[tale] 2018-03-08 02:03:00,248 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 02:03:00,248 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/5, 来路地址: 66.249.79.66
+[tale] 2018-03-08 02:03:00,249 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
+[tale] 2018-03-08 02:03:00,251 DEBUG [blade-pool-10] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 02:03:00,251 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 02:03:00,253 DEBUG [blade-pool-10] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,253 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 02:03:00,254 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,266 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
+[tale] 2018-03-08 02:03:00,266 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,266 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
+[tale] 2018-03-08 02:03:00,267 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,267 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 02:03:00,267 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 02:03:00,267 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 02:03:00,268 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 02:03:00,268 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,268 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 02:03:00,268 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,269 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 02:03:00,269 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 02:03:00,269 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 02:03:00,269 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 02:03:00,269 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 02:03:00,270 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 02:03:00,270 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,221 INFO  [blade-pool-11] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2018-03-08 03:24:20,224 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 03:24:20,224 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.79.95
+[tale] 2018-03-08 03:24:20,230 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 03:24:20,231 DEBUG [blade-pool-11] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,287 INFO  [blade-pool-12] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/4	HTTP/1.1
+[tale] 2018-03-08 03:24:20,287 INFO  [blade-pool-12] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 03:24:20,287 INFO  [blade-pool-12] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/4, 来路地址: 66.249.79.93
+[tale] 2018-03-08 03:24:20,289 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
+[tale] 2018-03-08 03:24:20,290 DEBUG [blade-pool-12] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 03:24:20,291 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 03:24:20,293 DEBUG [blade-pool-12] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,294 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 03:24:20,294 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,324 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
+[tale] 2018-03-08 03:24:20,325 DEBUG [blade-pool-12] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 03:24:20,325 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
+[tale] 2018-03-08 03:24:20,325 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,326 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 03:24:20,326 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 03:24:20,326 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 03:24:20,326 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 03:24:20,327 DEBUG [blade-pool-12] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 03:24:20,327 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 03:24:20,327 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 03:24:20,328 DEBUG [blade-pool-12] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2018-03-08 03:24:20,329 DEBUG [blade-pool-12] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 04:28:23,472 INFO  [blade-pool-9] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 04:28:23,473 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+[tale] 2018-03-08 04:28:23,473 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 123.125.71.77
+[tale] 2018-03-08 04:28:23,474 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 04:28:23,474 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 04:28:23,476 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 04:28:23,476 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 04:28:23,478 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 04:28:23,478 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 04:28:23,480 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 04:28:23,480 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 04:28:23,480 DEBUG [blade-pool-9] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 06:42:22,128 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2018-03-08 06:42:22,133 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 06:42:22,133 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.79.95
+[tale] 2018-03-08 06:42:22,138 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 06:42:22,139 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 06:42:22,178 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 06:42:22,178 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.96 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 06:42:22,178 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 66.249.79.95
+[tale] 2018-03-08 06:42:22,180 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 06:42:22,180 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 06:42:22,181 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2018-03-08 06:42:22,181 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 06:42:22,184 DEBUG [blade-pool-14] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2018-03-08 06:42:22,184 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 06:42:22,186 DEBUG [blade-pool-14] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 06:42:22,186 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 06:42:22,187 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 10:07:52,449 WARN  [blade-pool-9] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No URI for HttpChannelOverHttp@6b7bc992{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:07:55,205 WARN  [blade-pool-13] org.eclipse.jetty.http.HttpParser | Illegal character 0x16 in state=START for buffer HeapByteBuffer@1983c9f0[p=1,l=149,c=8192,r=148]={\x16<<<\x03\x01\x00\x90\x01\x00\x00\x8c\x03\x03T\xF6\x8d5\xAazC...\x00\x08\x04\x01\x04\x03\x02\x01\x02\x03\xFf\x01\x00\x01\x00>>>at)googlebot.com\r...%0A%0D%0A%23%23}
+[tale] 2018-03-08 10:07:55,206 WARN  [blade-pool-13] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x16 for HttpChannelOverHttp@1084ac2a{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:07:55,651 INFO  [blade-pool-13] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 10:07:55,653 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 zgrab/0.x
+[tale] 2018-03-08 10:07:55,654 INFO  [blade-pool-13] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 198.143.155.142
+[tale] 2018-03-08 10:07:55,658 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 10:07:55,658 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 10:07:55,660 DEBUG [blade-pool-13] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 10:07:55,660 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 10:07:55,662 DEBUG [blade-pool-13] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 10:07:55,664 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 10:07:55,665 DEBUG [blade-pool-13] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 10:07:55,665 DEBUG [blade-pool-13] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 10:07:55,666 DEBUG [blade-pool-13] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 10:59:55,727 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@a48512c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:56,135 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@14031348{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:56,566 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2a8ea33e{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:56,980 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@78d24dec{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:57,397 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@562eedc5{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:57,822 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6cae1689{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:58,279 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5530d087{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:58,689 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3f7839c9{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:59,096 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2f1059c2{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:59,503 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@4f681d9a{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 10:59:59,917 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@20a98cfb{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:00,346 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@30b088ad{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:00,769 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@35520077{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:01,168 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@d60d800{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:01,585 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@10e6ff45{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:02,004 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@323a4b22{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:02,476 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6d064b1b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:02,883 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@49a20045{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:03,330 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7726659b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:03,758 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@247b9324{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:04,183 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@83822ec{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:04,581 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1017ae24{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:04,980 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@57b9f4cc{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:08,416 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@894300c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:08,835 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@14a74c0f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:09,277 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@35ee5541{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:09,683 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@70c336a8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:10,111 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@55efada8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:10,567 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@26305c04{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:10,966 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@60541349{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:11,360 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@405440bb{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:11,810 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@12b9f541{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:12,293 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@776744a8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:12,754 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@73f26670{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:13,304 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@4896e7f1{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:13,702 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@49825b8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:14,113 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5523c191{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:14,526 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@566c19e4{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:14,994 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6d7056bf{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:15,501 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@75cf0ec1{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:15,900 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@e03c67b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:16,323 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@467e8bd{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:16,726 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@596c5a0c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:17,129 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3d15c725{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:17,569 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@50609496{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:18,004 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@d67ab19{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:18,491 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5643b773{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:18,892 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@38030771{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:19,321 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@32787710{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:19,825 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@e15e415{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:20,283 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6beadeb2{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:20,680 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5687187c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:21,087 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@55864f09{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:21,535 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2944f697{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:22,003 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@78caeb1b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:22,511 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@65f14dbc{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:22,925 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@18174f65{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:23,332 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@107def23{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:23,774 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1c66d410{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:24,186 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@69eb61ac{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:24,594 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@123f5688{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:24,997 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@e4209c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:25,541 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7907e062{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:25,964 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@4baef83e{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:26,435 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@d9c09b9{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:27,912 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5bf1c675{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:28,323 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@233ed370{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:28,727 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@59810886{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:29,163 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@234f86aa{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:29,571 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2891cc3c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:29,977 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@e9ccf6{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:30,381 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@421a8227{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:30,815 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@bec3dad{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:31,280 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7077cc3c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:31,673 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@51a7a265{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:32,083 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5d58dd55{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:32,487 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@68f23874{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:32,886 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@63cacc56{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:33,313 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1d03142b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:33,734 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2b3d4a99{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:34,160 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@abe0a43{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:34,555 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7b965ace{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:34,960 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@11c99b14{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:35,384 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@70f7ca43{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:35,790 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@75013003{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:36,278 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6fb998e8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:36,691 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@30d63945{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:37,114 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@293f71ce{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:37,509 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@27645a76{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:37,930 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@479e26d1{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:38,336 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5ee0baf5{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:38,737 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5f2cdd39{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:39,192 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@208d361d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:39,623 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@4a653e99{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:40,030 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@579694f7{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:40,488 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1221897f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:40,913 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1ebf84ca{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:41,313 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@77c79a3b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:41,731 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3625c296{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:42,141 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@180729d6{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:42,535 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7934c91d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:42,958 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@64af5671{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:43,371 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@68e52f17{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:43,770 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@70438fbc{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:44,179 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@253cd631{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:44,581 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@59f70f3f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:45,015 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@8011e91{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:45,476 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1a31446e{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:45,895 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7f303e9b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:46,353 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@46d052fa{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:46,814 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@725a012a{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:50,318 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6c6f306f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:50,720 WARN  [blade-pool-14] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3c5f0d0f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:51,120 WARN  [blade-pool-13] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@16c4640f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:51,531 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@27e0c9c2{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:51,945 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6f0baab9{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:52,399 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6bd1e5f5{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:52,799 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@73a1d4a{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:53,258 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7d7dce79{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:53,668 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@5e9c8504{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:54,092 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@1d7d06cb{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:54,506 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@79c40cb7{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:00:54,906 WARN  [blade-pool-10] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@66512611{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 11:43:41,277 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/currentsetting.htm	HTTP/1.1
+[tale] 2018-03-08 11:43:41,277 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: null
+[tale] 2018-03-08 11:43:41,277 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /currentsetting.htm, 来路地址: 101.24.123.202
+[tale] 2018-03-08 11:43:41,279 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 11:43:41,280 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 12:31:36,287 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 12:31:36,291 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+[tale] 2018-03-08 12:31:36,291 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 220.181.108.89
+[tale] 2018-03-08 12:31:36,297 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 12:31:36,298 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 12:31:36,300 DEBUG [blade-pool-10] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 12:31:36,300 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 12:31:36,303 DEBUG [blade-pool-10] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2018-03-08 12:31:36,305 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 12:31:36,306 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 12:31:36,307 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 12:31:36,307 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 12:37:12,869 INFO  [blade-pool-11] com.blade.mvc.dispatch.DispatcherHandler | GET	/verifylogin.do	HTTP/1.1
+[tale] 2018-03-08 12:37:12,870 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)
+[tale] 2018-03-08 12:37:12,870 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | 用户访问地址: /verifylogin.do, 来路地址: 123.206.13.220
+[tale] 2018-03-08 12:37:12,871 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 12:37:12,873 DEBUG [blade-pool-11] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 16:02:22,163 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@32228820{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:02:31,033 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@32221159{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:02:34,763 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3246e6cb{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:02:38,971 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@436be48f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:02:48,140 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@27f1b67d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:02:51,149 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@494af0a3{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:02,105 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@38ff398f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:06,151 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@38aef2aa{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:09,917 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@50b87ec8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:13,748 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@786c8fef{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:18,380 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@21dd8a4b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:21,674 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@12f0214c{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:24,527 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@101f1f36{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:28,397 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@500f850d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:38,906 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@279224f0{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:41,281 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3061f93a{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:44,846 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2e1d3bf1{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:50,923 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@b705d1{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:03:57,322 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@554d94ab{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:07,889 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@13c688fa{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:12,936 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@682c21d0{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:16,488 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7881ba1e{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:20,576 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@59094185{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:23,505 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7b53e662{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:27,061 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@28747ee{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:32,571 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7f7ea20{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:41,557 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@df71353{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:45,299 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@59156a4d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:48,825 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@3469d810{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:51,737 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2e1d1a7{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:55,491 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7a7ab17b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:04:58,787 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@50aacef0{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:05:01,549 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@6239d902{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:05:12,514 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@72b94d60{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:05:16,387 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@745ce434{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:05:19,703 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@207c541b{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 16:05:44,189 WARN  [blade-pool-11] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@7b535ed8{r=0,c=false,a=IDLE,uri=null}
+[tale] 2018-03-08 17:01:17,591 INFO  [blade-pool-11] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 17:01:17,594 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+[tale] 2018-03-08 17:01:17,594 INFO  [blade-pool-11] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 106.11.242.250
+[tale] 2018-03-08 17:01:17,598 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 17:01:17,598 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 17:01:17,600 DEBUG [blade-pool-11] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 17:01:17,600 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 17:01:17,602 DEBUG [blade-pool-11] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 17:01:17,604 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 17:01:17,605 DEBUG [blade-pool-11] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 17:01:17,605 DEBUG [blade-pool-11] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 17:01:17,606 DEBUG [blade-pool-11] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 20:29:36,358 INFO  [blade-pool-9] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 20:29:36,362 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+[tale] 2018-03-08 20:29:36,362 INFO  [blade-pool-9] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 123.125.71.44
+[tale] 2018-03-08 20:29:36,367 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 20:29:36,367 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 20:29:36,369 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 20:29:36,369 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 20:29:36,371 DEBUG [blade-pool-9] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 20:29:36,373 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 20:29:36,374 DEBUG [blade-pool-9] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 20:29:36,374 DEBUG [blade-pool-9] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 20:29:36,375 DEBUG [blade-pool-9] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 21:48:03,493 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2018-03-08 21:48:03,494 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 21:48:03,494 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.79.66
+[tale] 2018-03-08 21:48:03,496 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 21:48:03,497 DEBUG [blade-pool-10] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 21:48:03,526 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/prmyxzxgsqtzc.html	HTTP/1.1
+[tale] 2018-03-08 21:48:03,527 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2018-03-08 21:48:03,527 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /prmyxzxgsqtzc.html, 来路地址: 66.249.79.66
+[tale] 2018-03-08 21:48:03,528 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2018-03-08 21:48:03,528 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 22:12:36,338 INFO  [blade-pool-10] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2018-03-08 22:12:36,341 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+[tale] 2018-03-08 22:12:36,341 INFO  [blade-pool-10] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 106.11.242.232
+[tale] 2018-03-08 22:12:36,352 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 22:12:36,352 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2018-03-08 22:12:36,354 DEBUG [blade-pool-10] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2018-03-08 22:12:36,354 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2018-03-08 22:12:36,356 DEBUG [blade-pool-10] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2018-03-08 22:12:36,358 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 22:12:36,361 DEBUG [blade-pool-10] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2018-03-08 22:12:36,362 DEBUG [blade-pool-10] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2018-03-08 22:12:36,362 DEBUG [blade-pool-10] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]

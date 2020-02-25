@@ -1,0 +1,287 @@
+[tale] 2017-12-25 00:34:48,174 WARN  [blade-pool-31] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 HTTP/0.9 not supported for HttpChannelOverHttp@b2b1828{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 05:54:02,410 WARN  [blade-pool-16] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 HTTP/0.9 not supported for HttpChannelOverHttp@11d8819f{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 06:41:57,879 INFO  [blade-pool-29] com.blade.mvc.dispatch.DispatcherHandler | GET	/wls-wsat/CoordinatorPortType11	HTTP/1.1
+[tale] 2017-12-25 06:41:58,326 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | POST	/wls-wsat/CoordinatorPortType11	HTTP/1.1
+[tale] 2017-12-25 06:41:58,740 INFO  [blade-pool-31] com.blade.mvc.dispatch.DispatcherHandler | GET	/wls-wsat/CoordinatorPortType	HTTP/1.1
+[tale] 2017-12-25 06:41:59,153 INFO  [blade-pool-29] com.blade.mvc.dispatch.DispatcherHandler | POST	/wls-wsat/CoordinatorPortType	HTTP/1.1
+[tale] 2017-12-25 06:50:05,747 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/category/体会	HTTP/1.1
+[tale] 2017-12-25 06:50:05,759 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+[tale] 2017-12-25 06:50:05,759 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /category/%E4%BD%93%E4%BC%9A, 来路地址: 123.125.71.103
+[tale] 2017-12-25 06:50:05,779 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
+[tale] 2017-12-25 06:50:05,800 DEBUG [blade-pool-26] org.sql2o.Query | total: 21 ms, execution: 20 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 06:50:05,802 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
+[tale] 2017-12-25 06:50:05,806 DEBUG [blade-pool-26] org.sql2o.Query | total: 4 ms, execution: 4 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 06:50:05,807 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
+[tale] 2017-12-25 06:50:05,820 DEBUG [blade-pool-26] org.sql2o.Query | total: 13 ms, execution: 13 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 06:50:05,826 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 06:50:05,826 DEBUG [blade-pool-26] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 06:50:05,827 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 06:50:05,827 DEBUG [blade-pool-26] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 10:39:30,730 WARN  [blade-pool-23] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 No Host for HttpChannelOverHttp@2faae885{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 11:47:52,140 INFO  [blade-pool-29] com.blade.mvc.dispatch.DispatcherHandler | PROPFIND	/	HTTP/1.1
+[tale] 2017-12-25 11:47:52,146 ERROR [blade-pool-29] com.blade.mvc.dispatch.DispatcherHandler | No enum constant com.blade.mvc.http.HttpMethod.PROPFIND
+java.lang.IllegalArgumentException: No enum constant com.blade.mvc.http.HttpMethod.PROPFIND
+	at java.lang.Enum.valueOf(Enum.java:238)
+	at com.blade.mvc.http.HttpMethod.valueOf(HttpMethod.java:24)
+	at com.blade.mvc.route.RouteMatcher.lookupRoute(RouteMatcher.java:94)
+	at com.blade.mvc.route.RouteMatcher.getRoute(RouteMatcher.java:131)
+	at com.blade.mvc.dispatch.DispatcherHandler.handle(DispatcherHandler.java:80)
+	at com.blade.mvc.dispatch.DispatcherServlet.service(DispatcherServlet.java:39)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:830)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1584)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1228)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1553)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1130)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:318)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:112)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:122)
+	at org.eclipse.jetty.util.thread.strategy.ExecutingExecutionStrategy.invoke(ExecutingExecutionStrategy.java:58)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:201)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:133)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:748)
+[tale] 2017-12-25 11:51:24,460 WARN  [blade-pool-23] org.eclipse.jetty.http.HttpParser | Illegal character 0x3 in state=START for buffer HeapByteBuffer@14f643b1[p=1,l=19,c=8192,r=18]={\x03<<<\x00\x00\x13\x0e\xE0\x00\x00\x00\x00\x00\x01\x00\x08\x00\x03\x00\x00\x00>>>t\r\nContent-Type: ...MskycKV3gMAky3i}
+[tale] 2017-12-25 11:51:24,460 WARN  [blade-pool-23] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x3 for HttpChannelOverHttp@2aa8ce43{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 11:51:24,461 WARN  [blade-pool-22] org.eclipse.jetty.http.HttpParser | Illegal character 0x0 in state=START for buffer HeapByteBuffer@3ca2f646[p=1,l=156,c=8192,r=155]={\x00<<<\x9c\x00\x01\x1a+<M\x00\x01\x00\x00\x01\x00M\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>6i53qagmwcjmpq3ty...ycKV3gMAky3iUOH}
+[tale] 2017-12-25 11:51:24,461 WARN  [blade-pool-22] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x0 for HttpChannelOverHttp@695e0aad{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 11:51:24,461 WARN  [blade-pool-31] org.eclipse.jetty.http.HttpParser | Illegal character 0x12 in state=START for buffer HeapByteBuffer@1def51fa[p=1,l=52,c=8192,r=51]={\x12<<<\x01\x004\x00\x00\x00\x00\x00\x00\x15\x00\x06\x01\x00\x1b\x00\x01...SSQLServer\x00d!\x00\x00>>>: 0\r\n\r\n22:50:05 G...E5%86%B2%E7%AA%}
+[tale] 2017-12-25 11:51:24,461 WARN  [blade-pool-31] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x12 for HttpChannelOverHttp@7c7ce688{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 11:51:24,466 WARN  [blade-pool-29] org.eclipse.jetty.http.HttpParser | Illegal character 0x0 in state=START for buffer HeapByteBuffer@3bea3bb[p=76,l=81,c=8192,r=5]={CONNECT xui.ptlog...qq.com:443\r\n\r\n\x00<<<\xFf\xFf\xFf\xFfQ>>>jie.cn\r\nUser-Agen...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+[tale] 2017-12-25 11:51:24,467 WARN  [blade-pool-29] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x0 for HttpChannelOverHttp@6b5e9a6d{r=1,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 11:57:54,066 INFO  [blade-pool-23] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.0
+[tale] 2017-12-25 11:57:54,071 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | UserAgent: null
+[tale] 2017-12-25 11:57:54,071 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 153.169.5.51
+[tale] 2017-12-25 11:57:54,077 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 11:57:54,077 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 11:57:54,079 DEBUG [blade-pool-23] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2017-12-25 11:57:54,079 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2017-12-25 11:57:54,082 DEBUG [blade-pool-23] org.sql2o.Query | total: 3 ms, execution: 0 ms, reading and parsing: 3 ms; executed [null]
+[tale] 2017-12-25 11:57:54,084 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 11:57:54,085 DEBUG [blade-pool-23] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 11:57:54,086 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 11:57:54,088 DEBUG [blade-pool-23] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:22,081 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2017-12-25 12:08:22,082 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36
+[tale] 2017-12-25 12:08:22,083 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 123.125.67.209
+[tale] 2017-12-25 12:08:22,088 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 12:08:22,088 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 12:08:22,089 DEBUG [blade-pool-16] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2017-12-25 12:08:22,090 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2017-12-25 12:08:22,095 DEBUG [blade-pool-16] org.sql2o.Query | total: 5 ms, execution: 4 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 12:08:22,096 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 12:08:22,097 DEBUG [blade-pool-16] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:22,098 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 12:08:22,099 DEBUG [blade-pool-16] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,633 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/archives/	HTTP/1.1
+[tale] 2017-12-25 12:08:23,634 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.93 Safari/537.36
+[tale] 2017-12-25 12:08:23,634 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | 用户访问地址: /archives, 来路地址: 111.206.221.23
+[tale] 2017-12-25 12:08:23,641 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select strftime('%Y年%m月', datetime(created, 'unixepoch') ) as date_str, count(*) as count  from t_contents
+where type = 'post' and status = 'publish' group by date_str order by date_str desc
+[tale] 2017-12-25 12:08:23,642 DEBUG [blade-pool-32] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,654 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and created > ? and created < ? order by created desc 
+[tale] 2017-12-25 12:08:23,654 DEBUG [blade-pool-32] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,655 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and created > ? and created < ? order by created desc 
+[tale] 2017-12-25 12:08:23,655 DEBUG [blade-pool-32] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,656 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and created > ? and created < ? order by created desc 
+[tale] 2017-12-25 12:08:23,657 DEBUG [blade-pool-32] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,657 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and created > ? and created < ? order by created desc 
+[tale] 2017-12-25 12:08:23,658 DEBUG [blade-pool-32] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,658 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 12:08:23,659 DEBUG [blade-pool-32] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 12:08:23,660 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 12:08:23,660 DEBUG [blade-pool-32] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 16:45:01,292 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/muieblackcat	HTTP/1.1
+[tale] 2017-12-25 16:45:01,296 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: null
+[tale] 2017-12-25 16:45:01,296 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /muieblackcat, 来路地址: 178.62.195.55
+[tale] 2017-12-25 16:45:01,301 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 16:45:01,303 DEBUG [blade-pool-26] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 16:45:01,593 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 16:45:01,892 INFO  [blade-pool-31] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpmyadmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 16:45:02,227 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/pma/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 16:45:02,559 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/myadmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 16:45:02,885 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/MyAdmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 16:45:03,220 INFO  [blade-pool-23] com.blade.mvc.dispatch.DispatcherHandler | GET	/mysqladmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 17:06:39,438 WARN  [blade-pool-32] org.eclipse.jetty.http.HttpParser | Illegal character 0x16 in state=START for buffer HeapByteBuffer@775e257f[p=1,l=145,c=8192,r=144]={\x16<<<\x03\x01\x00\x8c\x01\x00\x00\x88\x03\x03\xCf\xF1\x1cb\x18:\xEe...\x00\x08\x04\x01\x04\x03\x02\x01\x02\x03\xFf\x01\x00\x01\x00>>>Close\r\n\r\n\n\r\n\x00\x00\x00\x00\x00...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00}
+[tale] 2017-12-25 17:06:39,438 WARN  [blade-pool-32] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x16 for HttpChannelOverHttp@3efb5cbe{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 17:07:11,957 WARN  [blade-pool-22] org.eclipse.jetty.http.HttpParser | Illegal character 0x16 in state=START for buffer HeapByteBuffer@14f643b1[p=1,l=145,c=8192,r=144]={\x16<<<\x03\x01\x00\x8c\x01\x00\x00\x88\x03\x03\x17\x12D\x9bg\x8a\x0e...\x00\x08\x04\x01\x04\x03\x02\x01\x02\x03\xFf\x01\x00\x01\x00>>>Server: Jetty(9.4...MskycKV3gMAky3i}
+[tale] 2017-12-25 17:07:11,957 WARN  [blade-pool-22] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x16 for HttpChannelOverHttp@32704d6d{r=0,c=false,a=IDLE,uri=null}
+[tale] 2017-12-25 18:18:59,786 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2017-12-25 18:18:59,786 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (iPad; CPU OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1
+[tale] 2017-12-25 18:18:59,786 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 106.11.225.178
+[tale] 2017-12-25 18:18:59,793 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 18:18:59,793 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2017-12-25 18:18:59,793 DEBUG [blade-pool-26] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2017-12-25 18:18:59,794 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2017-12-25 18:18:59,811 DEBUG [blade-pool-26] org.sql2o.Query | total: 17 ms, execution: 14 ms, reading and parsing: 3 ms; executed [null]
+[tale] 2017-12-25 18:18:59,816 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 18:18:59,830 DEBUG [blade-pool-26] org.sql2o.Query | total: 14 ms, execution: 13 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 18:18:59,831 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 18:18:59,833 DEBUG [blade-pool-26] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 19:31:40,490 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/ccvv	HTTP/1.1
+[tale] 2017-12-25 19:31:40,492 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64)
+[tale] 2017-12-25 19:31:40,493 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /ccvv, 来路地址: 71.6.202.198
+[tale] 2017-12-25 19:31:40,495 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 19:31:40,496 DEBUG [blade-pool-26] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:30:18,284 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | HEAD	/phpMyAdmin/index.php	HTTP/1.1
+[tale] 2017-12-25 22:37:13,936 INFO  [blade-pool-31] com.blade.mvc.dispatch.DispatcherHandler | GET	/admin/	HTTP/1.1
+[tale] 2017-12-25 22:37:13,941 INFO  [blade-pool-31] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 Google Favicon
+[tale] 2017-12-25 22:37:13,941 INFO  [blade-pool-31] com.tale.interceptor.BaseInterceptor | 用户访问地址: /admin, 来路地址: 104.225.144.83
+[tale] 2017-12-25 22:37:14,025 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/admin/login	HTTP/1.1
+[tale] 2017-12-25 22:37:14,030 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 Google Favicon
+[tale] 2017-12-25 22:37:14,030 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | 用户访问地址: /admin/login, 来路地址: 104.225.144.83
+[tale] 2017-12-25 22:47:46,245 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/w00tw00t.at.blackhats.romanian.anti-sec:)	HTTP/1.1
+[tale] 2017-12-25 22:47:46,246 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:46,246 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | 用户访问地址: /w00tw00t.at.blackhats.romanian.anti-sec:), 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:46,252 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:46,255 DEBUG [blade-pool-16] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:46,536 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpmyadmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:47,075 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:47,408 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/mysqladmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:47,709 INFO  [blade-pool-23] com.blade.mvc.dispatch.DispatcherHandler | GET	/PMA2012/	HTTP/1.1
+[tale] 2017-12-25 22:47:47,710 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:47,710 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | 用户访问地址: /PMA2012, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:47,714 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:47,716 DEBUG [blade-pool-23] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:48,021 INFO  [blade-pool-32] com.blade.mvc.dispatch.DispatcherHandler | GET	/pma2012/	HTTP/1.1
+[tale] 2017-12-25 22:47:48,022 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:48,022 INFO  [blade-pool-32] com.tale.interceptor.BaseInterceptor | 用户访问地址: /pma2012, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:48,024 DEBUG [blade-pool-32] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:48,025 DEBUG [blade-pool-32] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:48,333 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/PMA2011/	HTTP/1.1
+[tale] 2017-12-25 22:47:48,335 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:48,335 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | 用户访问地址: /PMA2011, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:48,337 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:48,338 DEBUG [blade-pool-16] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 22:47:48,634 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/pma2011/	HTTP/1.1
+[tale] 2017-12-25 22:47:48,636 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:48,636 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /pma2011, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:48,639 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:48,640 DEBUG [blade-pool-26] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:48,949 INFO  [blade-pool-23] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpmyadmin2/	HTTP/1.1
+[tale] 2017-12-25 22:47:48,950 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:48,950 INFO  [blade-pool-23] com.tale.interceptor.BaseInterceptor | 用户访问地址: /phpmyadmin2, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:48,954 DEBUG [blade-pool-23] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:48,955 DEBUG [blade-pool-23] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:49,268 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpmyadmin3/	HTTP/1.1
+[tale] 2017-12-25 22:47:49,270 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:49,270 INFO  [blade-pool-16] com.tale.interceptor.BaseInterceptor | 用户访问地址: /phpmyadmin3, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:49,273 DEBUG [blade-pool-16] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:49,274 DEBUG [blade-pool-16] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:49,589 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpmyadmin4/	HTTP/1.1
+[tale] 2017-12-25 22:47:49,590 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:49,590 INFO  [blade-pool-26] com.tale.interceptor.BaseInterceptor | 用户访问地址: /phpmyadmin4, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:49,592 DEBUG [blade-pool-26] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:49,593 DEBUG [blade-pool-26] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 22:47:49,891 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/pma/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:50,227 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/myadmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:50,525 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/MyAdmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:51,091 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/mysql/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:51,406 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin-2.10.0.0/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:51,727 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin-2.11.11/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:52,049 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin-2.11.11.3/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:52,374 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin-3.0.0.0-all-languages/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:52,703 INFO  [blade-pool-26] com.blade.mvc.dispatch.DispatcherHandler | GET	/dbadmin/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:52,997 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/db/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:53,307 INFO  [blade-pool-16] com.blade.mvc.dispatch.DispatcherHandler | GET	/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:53,615 INFO  [blade-pool-23] com.blade.mvc.dispatch.DispatcherHandler | GET	/phpMyAdmin-2/scripts/setup.php	HTTP/1.1
+[tale] 2017-12-25 22:47:53,938 INFO  [blade-pool-31] com.blade.mvc.dispatch.DispatcherHandler | GET	/mysql/	HTTP/1.1
+[tale] 2017-12-25 22:47:53,940 INFO  [blade-pool-31] com.tale.interceptor.BaseInterceptor | UserAgent: ZmEu
+[tale] 2017-12-25 22:47:53,940 INFO  [blade-pool-31] com.tale.interceptor.BaseInterceptor | 用户访问地址: /mysql, 来路地址: 94.102.49.4
+[tale] 2017-12-25 22:47:53,944 DEBUG [blade-pool-31] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2017-12-25 22:47:53,950 DEBUG [blade-pool-31] org.sql2o.Query | total: 6 ms, execution: 5 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 23:04:23,373 INFO  [blade-pool-22] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/4	HTTP/1.1
+[tale] 2017-12-25 23:04:23,378 INFO  [blade-pool-22] com.tale.interceptor.BaseInterceptor | UserAgent: Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)
+[tale] 2017-12-25 23:04:23,378 INFO  [blade-pool-22] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/4, 来路地址: 123.126.113.190
+[tale] 2017-12-25 23:04:23,381 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
+[tale] 2017-12-25 23:04:23,384 DEBUG [blade-pool-22] org.sql2o.Query | total: 3 ms, execution: 2 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 23:04:23,396 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 23:04:23,399 DEBUG [blade-pool-22] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,400 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2017-12-25 23:04:23,401 DEBUG [blade-pool-22] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,492 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
+[tale] 2017-12-25 23:04:23,492 DEBUG [blade-pool-22] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,493 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
+[tale] 2017-12-25 23:04:23,494 DEBUG [blade-pool-22] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,495 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2017-12-25 23:04:23,495 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2017-12-25 23:04:23,495 DEBUG [blade-pool-22] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2017-12-25 23:04:23,496 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2017-12-25 23:04:23,497 DEBUG [blade-pool-22] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2017-12-25 23:04:23,497 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2017-12-25 23:04:23,498 DEBUG [blade-pool-22] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,499 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2017-12-25 23:04:23,499 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
+[tale] 2017-12-25 23:04:23,499 DEBUG [blade-pool-22] org.sql2o.Query | total: 0 ms; executed scalar [No name]
+[tale] 2017-12-25 23:04:23,500 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
+[tale] 2017-12-25 23:04:23,500 DEBUG [blade-pool-22] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2017-12-25 23:04:23,500 DEBUG [blade-pool-22] org.sql2o.Query | Executing query:
+select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
+[tale] 2017-12-25 23:04:23,501 DEBUG [blade-pool-22] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]

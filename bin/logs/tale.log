@@ -1,697 +1,463 @@
-[tale] 2020-08-27 00:04:16,981 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 00:04:16,986 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)
-[tale] 2020-08-27 00:04:16,986 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 216.244.66.241
-[tale] 2020-08-27 00:04:16,989 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 01:31:25,630 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 01:31:25,639 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+[tale] 2020-08-28 01:31:25,639 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 128.14.134.170
+[tale] 2020-08-28 01:31:25,642 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 01:31:25,642 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 01:31:25,644 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 01:31:25,644 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 01:31:25,650 DEBUG [blade-pool-64] org.sql2o.Query | total: 6 ms, execution: 2 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 01:31:25,652 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 01:31:25,654 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 01:31:25,654 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 01:31:25,655 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 02:53:36,010 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 02:53:36,012 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27"
+[tale] 2020-08-28 02:53:36,012 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 3.81.245.94
+[tale] 2020-08-28 02:53:36,015 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 02:53:36,015 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 02:53:36,017 DEBUG [blade-pool-60] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 02:53:36,017 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 02:53:36,020 DEBUG [blade-pool-60] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 02:53:36,021 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 02:53:36,022 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 02:53:36,022 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 02:53:36,025 DEBUG [blade-pool-60] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 03:23:12,267 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.0
+[tale] 2020-08-28 03:23:12,269 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: NetSystemsResearch studies the availability of various services across the internet. Our website is netsystemsresearch.com
+[tale] 2020-08-28 03:23:12,269 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 92.118.161.45
+[tale] 2020-08-28 03:23:12,271 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 03:23:12,271 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 03:23:12,273 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 03:23:12,273 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 03:23:12,279 DEBUG [blade-pool-63] org.sql2o.Query | total: 6 ms, execution: 1 ms, reading and parsing: 5 ms; executed [null]
+[tale] 2020-08-28 03:23:12,280 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 03:23:12,281 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 03:23:12,283 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 03:23:12,283 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 04:19:57,661 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 04:19:57,663 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)
+[tale] 2020-08-28 04:19:57,663 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 111.202.101.19
+[tale] 2020-08-28 04:19:57,666 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 04:19:57,666 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 04:19:57,667 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 04:19:57,668 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 04:19:57,675 DEBUG [blade-pool-58] org.sql2o.Query | total: 7 ms, execution: 1 ms, reading and parsing: 6 ms; executed [null]
+[tale] 2020-08-28 04:19:57,677 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 04:19:57,678 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 04:19:57,678 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 04:19:57,679 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 04:24:56,369 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/wp-login.php	HTTP/1.1
+[tale] 2020-08-28 04:24:56,371 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0
+[tale] 2020-08-28 04:24:56,371 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /wp-login.php, 来路地址: 103.143.193.226
+[tale] 2020-08-28 04:24:56,375 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 00:04:16,990 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:07:43,651 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/Jython	HTTP/1.1
-[tale] 2020-08-27 00:07:43,654 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)
-[tale] 2020-08-27 00:07:43,654 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/Jython, 来路地址: 216.244.66.241
-[tale] 2020-08-27 00:07:43,657 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 04:24:56,376 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 04:46:36,002 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 04:46:36,004 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 zgrab/0.x
+[tale] 2020-08-28 04:46:36,004 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 110.45.241.231
+[tale] 2020-08-28 04:46:36,006 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 04:46:36,006 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 04:46:36,008 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 04:46:36,008 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 04:46:36,011 DEBUG [blade-pool-63] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 04:46:36,013 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 04:46:36,014 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 04:46:36,015 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 04:46:36,015 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 05:50:18,941 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 05:50:18,942 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; AhrefsBot/6.1; +http://ahrefs.com/robot/)
+[tale] 2020-08-28 05:50:18,942 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 54.36.148.2
+[tale] 2020-08-28 05:50:18,944 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 05:50:18,945 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 05:50:20,234 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 05:50:20,234 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)
+[tale] 2020-08-28 05:50:20,234 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 54.36.148.243
+[tale] 2020-08-28 05:50:20,236 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 05:50:20,236 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 05:50:20,237 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 05:50:20,237 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 05:50:20,240 DEBUG [blade-pool-63] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 05:50:20,241 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 05:50:20,242 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 05:50:20,242 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 05:50:20,242 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 06:01:45,416 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/manager/html	HTTP/1.1
+[tale] 2020-08-28 06:01:45,418 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Java/1.8.0_131
+[tale] 2020-08-28 06:01:45,418 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /manager/html, 来路地址: 185.128.41.50
+[tale] 2020-08-28 06:01:45,420 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 06:01:45,421 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 07:52:02,115 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 07:52:02,118 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 07:52:02,118 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
+[tale] 2020-08-28 07:52:02,120 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 07:52:02,121 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 07:52:03,191 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 07:52:03,192 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 07:52:03,192 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 178.154.200.62
+[tale] 2020-08-28 07:52:03,192 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 07:52:03,193 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 07:52:05,771 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 07:52:05,771 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 07:52:05,771 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 5.45.207.77
+[tale] 2020-08-28 07:52:05,772 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 07:52:05,772 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 07:52:05,773 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 07:52:05,773 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 07:52:05,776 DEBUG [blade-pool-58] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 07:52:05,778 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 07:52:05,779 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 07:52:05,779 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 07:52:05,779 DEBUG [blade-pool-58] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 07:52:06,856 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 07:52:06,856 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 07:52:06,856 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 178.154.200.62
+[tale] 2020-08-28 07:52:06,857 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 07:52:06,857 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 07:52:06,858 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 07:52:06,858 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 07:52:06,860 DEBUG [blade-pool-14] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 07:52:06,861 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 07:52:06,862 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 07:52:06,863 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 07:52:06,867 DEBUG [blade-pool-14] org.sql2o.Query | total: 4 ms, execution: 0 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 09:23:50,961 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 09:23:50,962 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
+[tale] 2020-08-28 09:23:50,962 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 43.229.73.249
+[tale] 2020-08-28 09:23:50,965 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 09:23:50,965 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 09:23:50,967 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 09:23:50,967 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 09:23:50,972 DEBUG [blade-pool-64] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 09:23:50,973 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 09:23:50,976 DEBUG [blade-pool-64] org.sql2o.Query | total: 3 ms, execution: 2 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 09:23:50,976 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 09:23:50,977 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 10:05:06,614 WARN  [blade-pool-58] org.eclipse.jetty.http.HttpParser | Illegal character 0x11 in state=METHOD for buffer HeapByteBuffer@26b6b892[p=4,l=289,c=8192,r=285]={D3"\x11<<<Q\x00 \x00x\xA8\xD04\x00\x00\x00\x00\x00\x00\x00\x00\t...\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00>>>20161208)\r\n\r\n8000...ult%3B%0D%0A+++}
+[tale] 2020-08-28 10:05:06,614 WARN  [blade-pool-58] org.eclipse.jetty.http.HttpParser | bad HTTP parsed: 400 Illegal character 0x11 for HttpChannelOverHttp@5ffec4e4{r=0,c=false,a=IDLE,uri=null}
+[tale] 2020-08-28 11:40:26,111 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 11:40:26,113 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
+[tale] 2020-08-28 11:40:26,113 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 193.118.53.202
+[tale] 2020-08-28 11:40:26,116 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 11:40:26,116 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 11:40:26,117 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 11:40:26,117 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 11:40:26,122 DEBUG [blade-pool-58] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 11:40:26,123 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 11:40:26,124 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 11:40:26,124 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 11:40:26,124 DEBUG [blade-pool-58] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 12:11:47,955 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 12:11:47,957 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2020-08-28 12:11:47,957 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.65.245
+[tale] 2020-08-28 12:11:47,959 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 12:11:47,960 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 12:36:49,371 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 12:36:49,372 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)
+[tale] 2020-08-28 12:36:49,372 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 101.201.50.1
+[tale] 2020-08-28 12:36:49,375 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 12:36:49,375 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 12:36:49,376 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 12:36:49,377 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 12:36:49,379 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 0 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 12:36:49,384 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 12:36:49,386 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 12:36:49,387 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 12:36:49,387 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 13:21:55,026 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 13:21:55,027 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
+[tale] 2020-08-28 13:21:55,028 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 134.236.127.174
+[tale] 2020-08-28 13:21:55,030 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 13:21:55,030 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 13:21:55,032 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 13:21:55,032 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 13:21:55,035 DEBUG [blade-pool-49] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 13:21:55,040 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 13:21:55,042 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 13:21:55,042 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 13:21:55,042 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 13:23:25,164 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 13:23:25,165 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 13:23:25,165 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
+[tale] 2020-08-28 13:23:25,165 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
+[tale] 2020-08-28 13:23:25,166 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 13:23:28,856 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 13:23:28,857 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
+[tale] 2020-08-28 13:23:28,857 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 5.45.207.77
+[tale] 2020-08-28 13:23:28,858 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 13:23:28,858 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 13:23:28,859 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 13:23:28,859 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 13:23:28,862 DEBUG [blade-pool-60] org.sql2o.Query | total: 3 ms, execution: 2 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 13:23:28,863 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 13:23:28,864 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 13:23:28,864 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 13:23:28,864 DEBUG [blade-pool-60] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 14:55:26,859 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 14:55:26,860 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
+[tale] 2020-08-28 14:55:26,860 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 5.190.50.62
+[tale] 2020-08-28 14:55:26,863 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 14:55:26,863 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 14:55:26,865 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 14:55:26,865 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 14:55:26,870 DEBUG [blade-pool-64] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 14:55:26,872 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 14:55:26,873 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 14:55:26,874 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 14:55:26,874 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 15:54:56,885 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.0
+[tale] 2020-08-28 15:54:56,886 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: masscan/1.0 (https://github.com/robertdavidgraham/masscan)
+[tale] 2020-08-28 15:54:56,886 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 212.83.128.2
+[tale] 2020-08-28 15:54:56,889 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 15:54:56,889 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
+[tale] 2020-08-28 15:54:56,890 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 15:54:56,890 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
+[tale] 2020-08-28 15:54:56,895 DEBUG [blade-pool-60] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 15:54:56,899 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 15:54:56,900 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 15:54:56,901 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
+select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
+[tale] 2020-08-28 15:54:56,901 DEBUG [blade-pool-60] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 15:55:27,418 ERROR [blade-pool-60] com.blade.mvc.http.wrapper.ServletResponse | 
+org.eclipse.jetty.io.RuntimeIOException: java.io.IOException: java.util.concurrent.TimeoutException: Idle timeout expired: 30000/30000 ms
+	at org.eclipse.jetty.server.ResponseWriter.isOpen(ResponseWriter.java:133)
+	at org.eclipse.jetty.server.ResponseWriter.write(ResponseWriter.java:230)
+	at org.eclipse.jetty.server.ResponseWriter.write(ResponseWriter.java:248)
+	at jetbrick.template.runtime.writer.JetWriterPrinter.print(JetWriterPrinter.java:133)
+	at jetbrick.template.parser.ast.AstValue.execute(AstValue.java:39)
+	at jetbrick.template.parser.ast.AstStatementList.execute(AstStatementList.java:212)
+	at jetbrick.template.parser.ast.AstDirectiveFor.execute(AstDirectiveFor.java:63)
+	at jetbrick.template.parser.ast.AstStatementList.execute(AstStatementList.java:212)
+	at jetbrick.template.parser.ast.AstTemplate.execute(AstTemplate.java:37)
+	at jetbrick.template.JetTemplateImpl.doInterpret(JetTemplateImpl.java:160)
+	at jetbrick.template.JetTemplateImpl.render(JetTemplateImpl.java:141)
+	at com.blade.mvc.view.template.JetbrickTemplateEngine.render(JetbrickTemplateEngine.java:106)
+	at com.blade.mvc.http.wrapper.ServletResponse.render(ServletResponse.java:275)
+	at com.blade.mvc.view.resolve.RouteViewResolve.handle(RouteViewResolve.java:64)
+	at com.blade.mvc.dispatch.DispatcherHandler.routeHandle(DispatcherHandler.java:181)
+	at com.blade.mvc.dispatch.DispatcherHandler.handle(DispatcherHandler.java:93)
+	at com.blade.mvc.dispatch.DispatcherServlet.service(DispatcherServlet.java:39)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:830)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:543)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:190)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1584)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:188)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1228)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:168)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:481)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1553)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:166)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1130)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerList.handle(HandlerList.java:52)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:132)
+	at org.eclipse.jetty.server.Server.handle(Server.java:564)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:318)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:279)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:112)
+	at org.eclipse.jetty.io.ChannelEndPoint$2.run(ChannelEndPoint.java:124)
+	at org.eclipse.jetty.util.thread.Invocable.invokePreferred(Invocable.java:122)
+	at org.eclipse.jetty.util.thread.strategy.ExecutingExecutionStrategy.invoke(ExecutingExecutionStrategy.java:58)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:201)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:133)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:672)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:590)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.io.IOException: java.util.concurrent.TimeoutException: Idle timeout expired: 30000/30000 ms
+	at org.eclipse.jetty.util.SharedBlockingCallback$Blocker.block(SharedBlockingCallback.java:226)
+	at org.eclipse.jetty.server.HttpOutput.write(HttpOutput.java:219)
+	at org.eclipse.jetty.server.HttpOutput.write(HttpOutput.java:509)
+	at java.io.ByteArrayOutputStream.writeTo(ByteArrayOutputStream.java:167)
+	at org.eclipse.jetty.server.Utf8HttpWriter.write(Utf8HttpWriter.java:183)
+	at org.eclipse.jetty.server.ResponseWriter.write(ResponseWriter.java:203)
+	at jetbrick.template.runtime.writer.JetWriterPrinter.print(JetWriterPrinter.java:119)
+	at jetbrick.template.parser.ast.AstText$Jdk7CharArrayEncoder.writeTo(AstText.java:266)
+	at jetbrick.template.parser.ast.AstText.execute(AstText.java:221)
+	... 43 more
+Caused by: java.util.concurrent.TimeoutException: Idle timeout expired: 30000/30000 ms
+	at org.eclipse.jetty.io.IdleTimeout.checkIdleTimeout(IdleTimeout.java:166)
+	at org.eclipse.jetty.io.IdleTimeout$1.run(IdleTimeout.java:50)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	... 1 more
+[tale] 2020-08-28 16:03:34,138 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/PDF	HTTP/1.1
+[tale] 2020-08-28 16:03:34,140 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
+[tale] 2020-08-28 16:03:34,140 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/PDF, 来路地址: 116.179.32.135
+[tale] 2020-08-28 16:03:34,142 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 00:07:43,658 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:07:43,659 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:03:34,143 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:03:34,143 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 00:07:43,660 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:07:43,660 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:03:34,144 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:03:34,145 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 00:07:43,662 DEBUG [blade-pool-14] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:07:43,663 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:03:34,146 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 16:03:34,148 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:07:43,664 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 00:07:43,664 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:03:34,149 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:03:34,149 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:07:43,664 DEBUG [blade-pool-14] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:07:44,926 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | HEAD	/robots.txt	HTTP/1.0
-[tale] 2020-08-27 00:23:06,785 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 00:23:06,786 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-[tale] 2020-08-27 00:23:06,786 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 170.238.119.46
-[tale] 2020-08-27 00:23:06,788 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:23:06,789 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:23:06,790 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 00:23:06,790 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 00:23:06,796 DEBUG [blade-pool-63] org.sql2o.Query | total: 6 ms, execution: 1 ms, reading and parsing: 5 ms; executed [null]
-[tale] 2020-08-27 00:23:06,797 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:23:06,798 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:23:06,801 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:23:06,801 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:39:57,610 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.0
-[tale] 2020-08-27 00:39:57,612 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-[tale] 2020-08-27 00:39:57,612 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 94.103.87.212
-[tale] 2020-08-27 00:39:57,614 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:39:57,614 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:39:57,616 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 00:39:57,616 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 00:39:57,621 DEBUG [blade-pool-64] org.sql2o.Query | total: 5 ms, execution: 3 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 00:39:57,623 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:39:57,624 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:39:57,624 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:39:57,625 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:47:11,435 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 00:47:11,437 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; BW/1.1; bit.ly/2W6Px8S) Chrome/84.0.4147.105 Safari/537.36
-[tale] 2020-08-27 00:47:11,437 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 54.252.198.218
-[tale] 2020-08-27 00:47:11,439 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:47:11,439 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 00:47:11,441 DEBUG [blade-pool-14] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 00:47:11,441 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 00:47:11,447 DEBUG [blade-pool-14] org.sql2o.Query | total: 6 ms, execution: 2 ms, reading and parsing: 4 ms; executed [null]
-[tale] 2020-08-27 00:47:11,448 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:47:11,449 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:47:11,451 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 00:47:11,451 DEBUG [blade-pool-14] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 00:47:12,660 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 00:47:12,660 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko; compatible; BW/1.1; bit.ly/2W6Px8S) Chrome/84.0.4147.105 Safari/537.36
-[tale] 2020-08-27 00:47:12,660 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 54.252.198.218
-[tale] 2020-08-27 00:47:12,661 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:03:34,150 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:45:34,134 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
+[tale] 2020-08-28 16:45:34,136 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2020-08-28 16:45:34,136 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.65.245
+[tale] 2020-08-28 16:45:34,139 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 00:47:12,662 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 02:54:23,742 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/TP/public/index.php	HTTP/1.1
-[tale] 2020-08-27 02:54:44,166 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 02:54:44,168 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)
-[tale] 2020-08-27 02:54:44,168 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 192.144.148.220
-[tale] 2020-08-27 02:54:44,169 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:45:34,140 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:47:57,420 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 16:47:57,421 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
+[tale] 2020-08-28 16:47:57,421 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 180.149.125.164
+[tale] 2020-08-28 16:47:57,423 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 02:54:44,170 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:47:57,423 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 02:54:44,171 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 02:54:44,171 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:47:57,424 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms; executed scalar [No name]
+[tale] 2020-08-28 16:47:57,425 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 02:54:44,174 DEBUG [blade-pool-58] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 02:54:44,175 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:47:57,427 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms, execution: 0 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 16:47:57,428 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 02:54:44,179 DEBUG [blade-pool-58] org.sql2o.Query | total: 4 ms, execution: 3 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 02:54:44,179 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:47:57,429 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 16:47:57,429 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 02:54:44,180 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:47:23,824 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/8	HTTP/1.1
-[tale] 2020-08-27 03:47:23,825 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)
-[tale] 2020-08-27 03:47:23,825 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/8, 来路地址: 116.179.32.220
-[tale] 2020-08-27 03:47:23,827 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
-[tale] 2020-08-27 03:47:23,828 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:47:23,829 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 03:47:23,831 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:47:23,831 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 03:47:23,834 DEBUG [blade-pool-49] org.sql2o.Query | total: 3 ms, execution: 0 ms, reading and parsing: 3 ms; executed [null]
-[tale] 2020-08-27 03:47:23,862 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
-[tale] 2020-08-27 03:47:23,862 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:47:23,863 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
-[tale] 2020-08-27 03:47:23,863 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:47:23,864 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 03:47:23,864 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 03:47:23,864 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms; executed scalar [No name]
-[tale] 2020-08-27 03:47:23,864 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
-[tale] 2020-08-27 03:47:23,864 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:48:17,897 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 03:48:17,897 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: HTTP Banner Detection (https://security.ipip.net)
-[tale] 2020-08-27 03:48:17,897 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 139.162.119.197
-[tale] 2020-08-27 03:48:17,898 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 16:47:57,430 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 17:07:59,954 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 17:07:59,955 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2020-08-28 17:07:59,955 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 66.249.65.247
+[tale] 2020-08-28 17:07:59,957 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 03:48:17,898 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:07:59,957 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 03:48:17,899 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 03:48:17,899 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:07:59,959 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 17:07:59,961 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 03:48:17,901 DEBUG [blade-pool-58] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 03:48:17,911 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:07:59,965 DEBUG [blade-pool-63] org.sql2o.Query | total: 4 ms, execution: 2 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 17:07:59,966 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 03:48:17,912 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 03:48:17,912 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:07:59,967 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 17:07:59,967 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 03:48:17,912 DEBUG [blade-pool-58] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:19:26,508 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 04:19:26,509 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Sogou web spider/4.0(+http://www.sogou.com/docs/help/webmasters.htm#07)
-[tale] 2020-08-27 04:19:26,509 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 123.183.224.163
-[tale] 2020-08-27 04:19:26,513 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:07:59,968 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 17:20:19,851 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 17:20:19,853 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.92 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+[tale] 2020-08-28 17:20:19,853 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 66.249.65.249
+[tale] 2020-08-28 17:20:19,855 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 04:19:26,513 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:20:19,855 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 04:19:26,515 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 04:19:26,515 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:20:19,857 DEBUG [blade-pool-60] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 17:20:19,857 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 04:19:26,522 DEBUG [blade-pool-64] org.sql2o.Query | total: 7 ms, execution: 5 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 04:19:26,524 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:20:19,862 DEBUG [blade-pool-60] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
+[tale] 2020-08-28 17:20:19,863 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:19:26,526 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:19:26,527 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:20:19,866 DEBUG [blade-pool-60] org.sql2o.Query | total: 3 ms, execution: 2 ms, reading and parsing: 1 ms; executed [null]
+[tale] 2020-08-28 17:20:19,866 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:19:26,527 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:11,864 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 04:32:11,866 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 04:32:11,866 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
-[tale] 2020-08-27 04:32:11,868 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 04:32:11,869 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:15,528 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/Zookeeper	HTTP/1.1
-[tale] 2020-08-27 04:32:15,528 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 04:32:15,528 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/Zookeeper, 来路地址: 5.45.207.77
-[tale] 2020-08-27 04:32:15,529 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 04:32:15,530 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:15,530 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 04:32:15,531 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:15,532 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 04:32:15,533 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:15,534 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:32:15,535 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:32:15,535 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:32:15,536 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:38:30,098 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.0
-[tale] 2020-08-27 04:38:30,100 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: null
-[tale] 2020-08-27 04:38:30,100 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 167.172.37.229
-[tale] 2020-08-27 04:38:30,102 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 17:20:19,866 DEBUG [blade-pool-60] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 17:57:51,489 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/QUERY/en-us/msdn/	HTTP/1.1
+[tale] 2020-08-28 18:10:34,539 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
+[tale] 2020-08-28 18:10:34,541 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 zgrab/0.x
+[tale] 2020-08-28 18:10:34,541 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 176.58.121.193
+[tale] 2020-08-28 18:10:34,543 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 04:38:30,102 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 18:10:34,543 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 04:38:30,103 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 04:38:30,103 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 18:10:34,545 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms; executed scalar [No name]
+[tale] 2020-08-28 18:10:34,545 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 04:38:30,106 DEBUG [blade-pool-49] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 04:38:30,107 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 18:10:34,548 DEBUG [blade-pool-49] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
+[tale] 2020-08-28 18:10:34,555 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:38:30,108 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 04:38:30,108 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
+[tale] 2020-08-28 18:10:34,556 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 18:10:34,557 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
 select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 04:38:30,109 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:10:12,156 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 05:10:12,158 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36
-[tale] 2020-08-27 05:10:12,158 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 45.248.43.83
-[tale] 2020-08-27 05:10:12,160 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 05:10:12,160 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 05:10:12,161 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 05:10:12,161 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 05:10:12,164 DEBUG [blade-pool-58] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 05:10:12,165 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 05:10:12,166 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:10:12,167 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 05:10:12,167 DEBUG [blade-pool-58] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:35:12,966 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 05:35:12,968 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 05:35:12,968 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
-[tale] 2020-08-27 05:35:12,970 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 05:35:12,971 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:35:16,628 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/Java	HTTP/1.1
-[tale] 2020-08-27 05:35:16,629 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 05:35:16,629 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/Java, 来路地址: 5.45.207.77
-[tale] 2020-08-27 05:35:16,630 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 05:35:16,631 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 05:35:16,631 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 05:35:16,632 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:35:16,632 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 05:35:16,634 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 05:35:16,634 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 05:35:16,635 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 05:35:16,635 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 05:35:16,641 DEBUG [blade-pool-63] org.sql2o.Query | total: 6 ms, execution: 6 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 06:11:14,245 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/manager/html	HTTP/1.1
-[tale] 2020-08-27 06:11:14,247 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 Gecko/20100101
-[tale] 2020-08-27 06:11:14,247 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /manager/html, 来路地址: 31.193.21.39
-[tale] 2020-08-27 06:11:14,249 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 06:11:14,250 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 06:49:18,307 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 06:49:18,308 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)
-[tale] 2020-08-27 06:49:18,308 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 192.99.5.228
-[tale] 2020-08-27 06:49:18,310 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 06:49:18,311 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 06:50:42,238 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/category/体会	HTTP/1.1
-[tale] 2020-08-27 06:50:42,239 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; MJ12bot/v1.4.8; http://mj12bot.com/)
-[tale] 2020-08-27 06:50:42,239 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /category/%E4%BD%93%E4%BC%9A, 来路地址: 192.99.5.228
-[tale] 2020-08-27 06:50:42,240 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 06:50:42,241 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 06:50:42,241 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 06:50:42,242 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 06:50:42,242 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 06:50:42,248 DEBUG [blade-pool-60] org.sql2o.Query | total: 6 ms, execution: 5 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 06:50:42,248 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 06:50:42,249 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 06:50:42,249 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 06:50:42,250 DEBUG [blade-pool-60] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 07:04:43,764 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 07:04:43,766 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 07:04:43,766 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
-[tale] 2020-08-27 07:04:43,768 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 07:04:43,769 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 07:04:47,424 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/AmMap	HTTP/1.1
-[tale] 2020-08-27 07:04:47,425 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 07:04:47,425 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/AmMap, 来路地址: 5.45.207.77
-[tale] 2020-08-27 07:04:47,425 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 07:04:47,426 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 07:04:47,426 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 07:04:47,427 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 07:04:47,428 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 07:04:47,429 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 07:04:47,429 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 07:04:47,430 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 07:04:47,430 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 07:04:47,431 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 08:08:22,647 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 08:08:22,648 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: null
-[tale] 2020-08-27 08:08:22,649 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 162.142.125.23
-[tale] 2020-08-27 08:08:22,651 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 08:08:22,651 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 08:08:22,652 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 08:08:22,652 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 08:08:22,655 DEBUG [blade-pool-64] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 08:08:22,666 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 08:08:22,667 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 08:08:22,667 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 08:08:22,668 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 08:08:23,265 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 08:08:23,265 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; CensysInspect/1.1; +https://about.censys.io/)
-[tale] 2020-08-27 08:08:23,266 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 162.142.125.23
-[tale] 2020-08-27 08:08:23,266 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 08:08:23,267 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 08:08:23,268 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 08:08:23,268 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 08:08:23,270 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 08:08:23,270 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 08:08:23,271 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 08:08:23,271 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 08:08:23,272 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 08:54:22,303 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | POST	/search.php	HTTP/1.1
-[tale] 2020-08-27 08:54:22,902 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | POST	/search.php	HTTP/1.1
-[tale] 2020-08-27 08:54:23,351 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | POST	/search.php	HTTP/1.1
-[tale] 2020-08-27 08:54:25,332 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | POST	/search.php	HTTP/1.1
-[tale] 2020-08-27 08:54:25,817 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | POST	/search.php	HTTP/1.1
-[tale] 2020-08-27 09:11:28,844 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 09:11:28,845 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)
-[tale] 2020-08-27 09:11:28,845 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 216.244.66.241
-[tale] 2020-08-27 09:11:28,847 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 09:11:28,849 DEBUG [blade-pool-58] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,324 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/3	HTTP/1.1
-[tale] 2020-08-27 09:15:01,325 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)
-[tale] 2020-08-27 09:15:01,325 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/3, 来路地址: 216.244.66.241
-[tale] 2020-08-27 09:15:01,326 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
-[tale] 2020-08-27 09:15:01,326 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,336 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-update t_contents set hits =  ? where cid = ?
-[tale] 2020-08-27 09:15:01,336 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms; executed update [No name]
-[tale] 2020-08-27 09:15:01,342 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:15:01,344 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,344 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:15:01,345 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,368 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
-[tale] 2020-08-27 09:15:01,369 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,369 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
-[tale] 2020-08-27 09:15:01,370 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,370 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 09:15:01,370 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 09:15:01,370 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms; executed scalar [No name]
-[tale] 2020-08-27 09:15:01,371 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
-[tale] 2020-08-27 09:15:01,371 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,371 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,371 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,372 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,372 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,372 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,372 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,373 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms; executed scalar [No name]
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
-[tale] 2020-08-27 09:15:01,374 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,375 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,375 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,375 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,375 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,376 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,376 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,376 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where parent = ? order by coid asc 
-[tale] 2020-08-27 09:15:01,376 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:01,393 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where coid = ?
-[tale] 2020-08-27 09:15:01,400 DEBUG [blade-pool-49] org.sql2o.Query | total: 7 ms, execution: 7 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:12,677 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/Access	HTTP/1.1
-[tale] 2020-08-27 09:15:12,678 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; DotBot/1.1; http://www.opensiteexplorer.org/dotbot, help@moz.com)
-[tale] 2020-08-27 09:15:12,678 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/Access, 来路地址: 216.244.66.241
-[tale] 2020-08-27 09:15:12,679 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 09:15:12,680 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:12,680 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 09:15:12,681 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:12,682 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 09:15:12,683 DEBUG [blade-pool-64] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:12,684 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:15:12,684 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:15:12,685 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:15:12,685 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:00,274 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 09:23:00,277 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 09:23:00,277 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
-[tale] 2020-08-27 09:23:00,278 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 09:23:00,279 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:03,932 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/tag/Swagger	HTTP/1.1
-[tale] 2020-08-27 09:23:03,932 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 09:23:03,932 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /tag/Swagger, 来路地址: 5.45.207.77
-[tale] 2020-08-27 09:23:03,934 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? and a.name = ? group by a.mid
-[tale] 2020-08-27 09:23:03,937 DEBUG [blade-pool-64] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:03,937 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post'
-[tale] 2020-08-27 09:23:03,939 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:03,939 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.* from t_contents a left join t_relationships b on a.cid = b.cid where b.mid = ? and a.status = 'publish' and a.type = 'post' order by a.created desc limit 0,12
-[tale] 2020-08-27 09:23:03,941 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:03,943 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:23:03,943 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 09:23:03,944 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 09:23:03,944 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:11:12,756 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 10:11:12,757 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-[tale] 2020-08-27 10:11:12,758 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 151.235.162.183
-[tale] 2020-08-27 10:11:12,760 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:11:12,760 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:11:12,762 DEBUG [blade-pool-58] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 10:11:12,762 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 10:11:12,766 DEBUG [blade-pool-58] org.sql2o.Query | total: 4 ms, execution: 1 ms, reading and parsing: 3 ms; executed [null]
-[tale] 2020-08-27 10:11:12,767 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:11:12,768 DEBUG [blade-pool-58] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:11:12,768 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:11:12,771 DEBUG [blade-pool-58] org.sql2o.Query | total: 3 ms, execution: 3 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:24:14,700 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 10:24:14,702 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
-[tale] 2020-08-27 10:24:14,702 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 66.249.65.109
-[tale] 2020-08-27 10:24:14,704 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 10:24:14,705 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:24:14,782 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 10:24:14,782 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
-[tale] 2020-08-27 10:24:14,783 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 66.249.65.105
-[tale] 2020-08-27 10:24:14,784 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:24:14,784 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:24:14,785 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 10:24:14,785 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 10:24:14,788 DEBUG [blade-pool-14] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 10:24:14,789 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:24:14,790 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:24:14,790 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:24:14,791 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:33:09,642 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 10:33:09,643 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.92 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
-[tale] 2020-08-27 10:33:09,643 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 66.249.65.107
-[tale] 2020-08-27 10:33:09,645 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:33:09,645 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:33:09,647 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 10:33:09,647 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 10:33:09,652 DEBUG [blade-pool-49] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
-[tale] 2020-08-27 10:33:09,654 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:33:09,654 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:33:09,655 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:33:09,655 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 10:34:14,321 INFO  [blade-pool-64] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 10:34:14,323 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36
-[tale] 2020-08-27 10:34:14,323 INFO  [blade-pool-64] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 180.149.125.164
-[tale] 2020-08-27 10:34:14,325 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:34:14,325 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 10:34:14,328 DEBUG [blade-pool-64] org.sql2o.Query | total: 3 ms; executed scalar [No name]
-[tale] 2020-08-27 10:34:14,328 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 10:34:14,335 DEBUG [blade-pool-64] org.sql2o.Query | total: 7 ms, execution: 1 ms, reading and parsing: 6 ms; executed [null]
-[tale] 2020-08-27 10:34:14,336 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:34:14,338 DEBUG [blade-pool-64] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 10:34:14,338 DEBUG [blade-pool-64] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 10:34:14,338 DEBUG [blade-pool-64] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 11:28:24,427 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 11:28:24,431 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7
-[tale] 2020-08-27 11:28:24,431 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 89.32.164.0
-[tale] 2020-08-27 11:28:24,435 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 11:28:24,435 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 11:28:24,438 DEBUG [blade-pool-14] org.sql2o.Query | total: 3 ms; executed scalar [No name]
-[tale] 2020-08-27 11:28:24,439 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 11:28:24,444 DEBUG [blade-pool-14] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
-[tale] 2020-08-27 11:28:24,445 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 11:28:24,449 DEBUG [blade-pool-14] org.sql2o.Query | total: 4 ms, execution: 4 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 11:28:24,449 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 11:28:24,450 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 12:22:42,569 INFO  [blade-pool-60] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 12:22:42,573 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36
-[tale] 2020-08-27 12:22:42,573 INFO  [blade-pool-60] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 170.245.130.159
-[tale] 2020-08-27 12:22:42,578 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 12:22:42,578 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 12:22:42,580 DEBUG [blade-pool-60] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 12:22:42,580 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 12:22:42,584 DEBUG [blade-pool-60] org.sql2o.Query | total: 4 ms, execution: 2 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 12:22:42,588 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 12:22:42,590 DEBUG [blade-pool-60] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 12:22:42,591 DEBUG [blade-pool-60] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 12:22:42,591 DEBUG [blade-pool-60] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:03:10,793 INFO  [blade-pool-58] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 13:03:10,795 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; AhrefsBot/7.0; +http://ahrefs.com/robot/)
-[tale] 2020-08-27 13:03:10,795 INFO  [blade-pool-58] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 54.36.148.138
-[tale] 2020-08-27 13:03:10,797 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 13:03:10,797 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 13:03:10,799 DEBUG [blade-pool-58] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 13:03:10,799 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 13:03:10,802 DEBUG [blade-pool-58] org.sql2o.Query | total: 3 ms, execution: 1 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 13:03:10,803 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:03:10,805 DEBUG [blade-pool-58] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 13:03:10,805 DEBUG [blade-pool-58] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:03:10,805 DEBUG [blade-pool-58] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:15,407 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 13:06:15,407 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 13:06:15,407 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 5.45.207.77
-[tale] 2020-08-27 13:06:15,408 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 13:06:15,409 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:19,069 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/article/11	HTTP/1.1
-[tale] 2020-08-27 13:06:19,069 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (compatible; YandexBot/3.0; +http://yandex.com/bots)
-[tale] 2020-08-27 13:06:19,069 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /article/11, 来路地址: 5.45.207.77
-[tale] 2020-08-27 13:06:19,070 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where cid = ?
-[tale] 2020-08-27 13:06:19,070 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:19,071 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:06:19,072 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 0 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 13:06:19,072 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:06:19,072 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:19,100 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid < ?
-[tale] 2020-08-27 13:06:19,100 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:19,100 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? and cid > ?
-[tale] 2020-08-27 13:06:19,101 DEBUG [blade-pool-49] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:06:19,101 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 13:06:19,102 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select count(0) from (select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ?) tmp_count
-[tale] 2020-08-27 13:06:19,102 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms; executed scalar [No name]
-[tale] 2020-08-27 13:06:19,102 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select agent,author,author_id,cid,coid,content,created,ip,mail,owner_id,parent,status,type,url from t_comments where cid = ? and parent = ? order by coid desc limit 0,6
-[tale] 2020-08-27 13:06:19,102 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:17:25,821 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/QUERY/en-us/msdn/	HTTP/1.1
-[tale] 2020-08-27 13:30:14,898 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 13:30:14,899 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-[tale] 2020-08-27 13:30:14,900 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 193.118.53.202
-[tale] 2020-08-27 13:30:14,902 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 13:30:14,902 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 13:30:14,904 DEBUG [blade-pool-14] org.sql2o.Query | total: 2 ms; executed scalar [No name]
-[tale] 2020-08-27 13:30:14,904 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 13:30:14,910 DEBUG [blade-pool-14] org.sql2o.Query | total: 6 ms, execution: 4 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 13:30:14,911 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:30:14,912 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:30:14,912 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 13:30:14,913 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 13:30:16,086 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/webfig/	HTTP/1.1
-[tale] 2020-08-27 13:30:16,086 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36
-[tale] 2020-08-27 13:30:16,086 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /webfig, 来路地址: 193.118.53.202
-[tale] 2020-08-27 13:30:16,087 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 13:30:16,088 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 15:16:03,192 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 15:16:03,193 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36
-[tale] 2020-08-27 15:16:03,193 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 51.254.59.113
-[tale] 2020-08-27 15:16:03,196 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 15:16:03,196 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 15:16:03,197 DEBUG [blade-pool-63] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 15:16:03,197 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 15:16:03,202 DEBUG [blade-pool-63] org.sql2o.Query | total: 5 ms, execution: 3 ms, reading and parsing: 2 ms; executed [null]
-[tale] 2020-08-27 15:16:03,206 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 15:16:03,208 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 15:16:03,208 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 15:16:03,208 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 17:00:21,839 INFO  [blade-pool-49] com.blade.mvc.dispatch.DispatcherHandler | GET	/robots.txt	HTTP/1.1
-[tale] 2020-08-27 17:00:21,840 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | UserAgent: Go-http-client/1.1
-[tale] 2020-08-27 17:00:21,840 INFO  [blade-pool-49] com.tale.interceptor.BaseInterceptor | 用户访问地址: /robots.txt, 来路地址: 192.36.53.165
-[tale] 2020-08-27 17:00:21,842 DEBUG [blade-pool-49] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 17:00:21,844 DEBUG [blade-pool-49] org.sql2o.Query | total: 2 ms, execution: 2 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 17:00:22,181 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/humans.txt	HTTP/1.1
-[tale] 2020-08-27 17:00:22,181 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Go-http-client/1.1
-[tale] 2020-08-27 17:00:22,181 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /humans.txt, 来路地址: 192.71.12.140
-[tale] 2020-08-27 17:00:22,182 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 17:00:22,183 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 17:00:22,532 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/ads.txt	HTTP/1.1
-[tale] 2020-08-27 17:00:22,532 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Go-http-client/1.1
-[tale] 2020-08-27 17:00:22,532 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /ads.txt, 来路地址: 192.71.44.44
-[tale] 2020-08-27 17:00:22,533 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where slug = ?
-[tale] 2020-08-27 17:00:22,534 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 17:00:23,056 INFO  [blade-pool-14] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 17:00:23,056 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | UserAgent: Go-http-client/1.1
-[tale] 2020-08-27 17:00:23,056 INFO  [blade-pool-14] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 192.36.71.133
-[tale] 2020-08-27 17:00:23,057 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 17:00:23,057 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 17:00:23,058 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms; executed scalar [No name]
-[tale] 2020-08-27 17:00:23,058 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 17:00:23,063 DEBUG [blade-pool-14] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
-[tale] 2020-08-27 17:00:23,063 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 17:00:23,064 DEBUG [blade-pool-14] org.sql2o.Query | total: 1 ms, execution: 1 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 17:00:23,065 DEBUG [blade-pool-14] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 17:00:23,065 DEBUG [blade-pool-14] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
-[tale] 2020-08-27 18:44:25,522 INFO  [blade-pool-63] com.blade.mvc.dispatch.DispatcherHandler | GET	/	HTTP/1.1
-[tale] 2020-08-27 18:44:25,524 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | UserAgent: Mozilla/5.0 zgrab/0.x
-[tale] 2020-08-27 18:44:25,524 INFO  [blade-pool-63] com.tale.interceptor.BaseInterceptor | 用户访问地址: /, 来路地址: 51.195.168.75
-[tale] 2020-08-27 18:44:25,526 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 18:44:25,526 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select count(0) from (select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ?) tmp_count
-[tale] 2020-08-27 18:44:25,529 DEBUG [blade-pool-63] org.sql2o.Query | total: 3 ms; executed scalar [No name]
-[tale] 2020-08-27 18:44:25,529 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select allow_comment,allow_feed,allow_ping,author_id,categories,cid,comments_num,content,created,fmt_type,hits,modified,slug,status,tags,thumb_img,title,type from t_contents where type = ? and status = ? order by created desc limit 0,12
-[tale] 2020-08-27 18:44:25,534 DEBUG [blade-pool-63] org.sql2o.Query | total: 5 ms, execution: 1 ms, reading and parsing: 4 ms; executed [null]
-[tale] 2020-08-27 18:44:25,535 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 18:44:25,537 DEBUG [blade-pool-63] org.sql2o.Query | total: 2 ms, execution: 1 ms, reading and parsing: 1 ms; executed [null]
-[tale] 2020-08-27 18:44:25,537 DEBUG [blade-pool-63] org.sql2o.Query | Executing query:
-select a.*, count(b.cid) as count from t_metas a left join `t_relationships` b on a.mid = b.mid where a.type = ? group by a.mid order by count desc, a.mid desc limit ?
-[tale] 2020-08-27 18:44:25,537 DEBUG [blade-pool-63] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
+[tale] 2020-08-28 18:10:34,557 DEBUG [blade-pool-49] org.sql2o.Query | total: 0 ms, execution: 0 ms, reading and parsing: 0 ms; executed [null]
